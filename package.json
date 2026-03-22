@@ -11,6 +11,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "type": "module",
   "dependencies": {
     "lucide-react": "^0.577.0",
