@@ -99,11 +99,9 @@ function App() {
       <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <a href="#hero" className="flex items-center gap-3" aria-label="SecurityCenter - Inicio">
-            <img
-              src="[PLACEHOLDER_LOGO_URL]"
-              alt="Logo SecurityCenter"
-              className="h-10 w-10 rounded-lg border border-slate-200 bg-slate-100 object-cover"
-            />
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-brand-700 to-brand-900 font-heading text-sm font-extrabold text-white shadow-sm">
+              SC
+            </span>
             <div>
               <p className="font-heading text-lg font-extrabold text-brand-900">SecurityCenter</p>
               <p className="text-xs uppercase tracking-[0.12em] text-slate-500">Suporte e Solucoes de TI</p>
@@ -126,7 +124,7 @@ function App() {
           </nav>
 
           <a
-            href="[PLACEHOLDER_WHATSAPP_LINK]"
+            href="https://wa.me/5521998209990"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-brand-900"
@@ -171,7 +169,7 @@ function App() {
 
             <aside className="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-card sm:p-8">
               <img
-                src="[PLACEHOLDER_HERO_IMAGE_URL]"
+                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80"
                 alt="Equipe tecnica da SecurityCenter em atendimento"
                 className="h-56 w-full rounded-xl object-cover sm:h-64"
               />
@@ -254,6 +252,7 @@ function App() {
           <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
             <div>
               <SectionTitle
+                light
                 eyebrow="Por que escolher a SecurityCenter"
                 title="Apoio tecnico que protege a produtividade da sua operacao"
                 description="Com a SecurityCenter, sua empresa conta com um parceiro estrategico em TI que garante suporte completo, seguranca e eficiencia."
@@ -285,27 +284,27 @@ function App() {
               />
               <div className="mt-8 grid gap-4">
                 <a
-                  href="tel:[PLACEHOLDER_PHONE]"
+                  href="tel:+5521998209990"
                   className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-brand-300"
                 >
                   <Phone className="mt-1 text-brand-700" size={18} aria-hidden="true" />
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.1em] text-slate-500">Telefone</p>
-                    <p className="font-semibold text-slate-900">[PLACEHOLDER_PHONE]</p>
+                    <p className="font-semibold text-slate-900">(21) 99820-9990</p>
                   </div>
                 </a>
                 <a
-                  href="mailto:[PLACEHOLDER_EMAIL]"
+                  href="mailto:securitycenter@securitycenter.com"
                   className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-brand-300"
                 >
                   <Mail className="mt-1 text-brand-700" size={18} aria-hidden="true" />
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.1em] text-slate-500">E-mail</p>
-                    <p className="font-semibold text-slate-900">[PLACEHOLDER_EMAIL]</p>
+                    <p className="font-semibold text-slate-900">securitycenter@securitycenter.com</p>
                   </div>
                 </a>
                 <a
-                  href="[PLACEHOLDER_WHATSAPP_LINK]"
+                  href="https://wa.me/5521998209990"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-brand-300"
@@ -313,14 +312,14 @@ function App() {
                   <Smartphone className="mt-1 text-brand-700" size={18} aria-hidden="true" />
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.1em] text-slate-500">WhatsApp</p>
-                    <p className="font-semibold text-slate-900">[PLACEHOLDER_WHATSAPP]</p>
+                    <p className="font-semibold text-slate-900">(21) 99820-9990</p>
                   </div>
                 </a>
                 <div className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                   <MapPin className="mt-1 text-brand-700" size={18} aria-hidden="true" />
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.1em] text-slate-500">Endereco</p>
-                    <p className="font-semibold text-slate-900">[PLACEHOLDER_ADDRESS]</p>
+                    <p className="font-semibold text-slate-900">Av. Rio Branco, 156 - Centro, Rio de Janeiro - RJ, 20040-901</p>
                   </div>
                 </div>
               </div>
