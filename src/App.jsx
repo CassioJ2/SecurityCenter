@@ -23,42 +23,48 @@ const services = [
   {
     icon: Headset,
     title: 'Service Desk',
+    description: 'Seu ponto único de contato para suporte de TI',
     points: [
-      'Ponto unico de contato para usuarios.',
-      'Atendimento remoto para incidentes e solicitacoes.',
-      'Registro e acompanhamento de chamados com SLA definido.',
-      'Encaminhamento para areas especializadas quando necessario.',
+      'Atendimento remoto ágil para incidentes e solicitações.',
+      'Registro e acompanhamento de chamados com SLA definido, garantindo previsibilidade e qualidade.',
+      'Encaminhamento eficiente para áreas especializadas sempre que necessário.',
     ],
+    footer: 'O Service Desk da SecurityCenter centraliza o suporte, assegurando rapidez na resolução e padronização no atendimento corporativo',
   },
   {
     icon: Wrench,
     title: 'Deskside Support',
+    description: 'Suporte presencial para demandas críticas de TI',
     points: [
-      'Suporte presencial para problemas que nao podem ser resolvidos remotamente.',
-      'Instalacao e configuracao de equipamentos.',
-      'Troca de hardware e perifericos.',
-      'Atendimento direto ao usuario.',
+      'Atendimento direto ao usuário para problemas que não podem ser solucionados remotamente.',
+      'Instalação e configuração completa de equipamentos.',
+      'Substituição de hardware e periféricos com agilidade.',
+      'Suporte presencial que garante eficiência e continuidade das operações.',
     ],
+    footer: 'O Deskside Support da SecurityCenter assegura que cada necessidade tecnológica seja tratada de forma rápida e personalizada, mantendo a produtividade da sua empresa em alto nível.',
   },
   {
     icon: Network,
     title: 'Infraestrutura',
+    description: 'Gestão completa de sua tecnologia',
     points: [
-      'Gestao de servidores, redes e datacenters.',
-      'Administracao de ambientes em nuvem e locais.',
-      'Monitoramento de desempenho e seguranca.',
-      'Implementacao de solucoes escalaveis e resilientes.',
+      'Administração de servidores, redes e datacenters com monitoramento 24/7.',
+      'Gestão de ambientes em nuvem e infraestrutura local integrados.',
+      'Implementação de soluções escaláveis, resilientes e seguras.',
     ],
+    footer: 'A infraestrutura é a base do seu negócio. A SecurityCenter garante performance, segurança e disponibilidade contínua.',
   },
   {
     icon: Workflow,
     title: 'Dispatch',
+    description: 'Coordenação inteligente para o fluxo de atendimento',
     points: [
-      'Coordenacao e distribuicao de chamados.',
-      'Priorizacao de demandas criticas.',
-      'Direcionamento para equipes adequadas.',
-      'Garantia de eficiencia no fluxo de atendimento.',
+      'Distribuição organizada e eficiente de chamados.',
+      'Priorização imediata de demandas críticas.',
+      'Direcionamento assertivo para as equipes especializadas.',
+      'Garantia de agilidade e eficiência em todo o processo de suporte.',
     ],
+    footer: 'O Dispatch da SecurityCenter assegura que cada solicitação seja tratada com rapidez e precisão, mantendo a continuidade das operações e elevando o padrão de atendimento corporativo.',
   },
 ];
 
@@ -66,22 +72,22 @@ const differentiators = [
   {
     icon: BadgeCheck,
     title: 'Equipe altamente qualificada e certificada',
-    text: 'Profissionais preparados para atuar com padrao tecnico, governanca e foco em continuidade operacional.',
+    text: 'Profissionais preparados para atuar com excelência técnica, alinhados às melhores práticas de governança e comprometidos com a continuidade operacional.',
   },
   {
     icon: Users,
     title: 'Atendimento personalizado',
-    text: 'Operacao adaptada ao contexto da sua empresa, com acompanhamento proximo e comunicacao objetiva.',
+    text: 'Serviços adaptados ao contexto da sua empresa, com acompanhamento próximo e comunicação clara para garantir eficiência e transparência.',
   },
   {
     icon: ShieldCheck,
-    title: 'Compromisso com seguranca e disponibilidade',
-    text: 'Atuacao orientada para reduzir riscos, preservar disponibilidade e manter a tecnologia confiavel.',
+    title: 'Compromisso com segurança e disponibilidade',
+    text: 'Atuação focada em reduzir riscos, preservar a disponibilidade e assegurar a confiabilidade da tecnologia que sustenta o seu negócio.',
   },
   {
     icon: Clock3,
-    title: 'Foco em reduzir custos e aumentar eficiencia operacional',
-    text: 'Processos de atendimento e infraestrutura pensados para melhorar performance sem elevar complexidade.',
+    title: 'Foco em reduzir custos e aumentar eficiência operacional',
+    text: 'Processos de atendimento e gestão de infraestrutura desenhados para elevar a performance sem aumentar a complexidade.',
   },
 ];
 
@@ -94,6 +100,31 @@ const whyChooseItems = [
 ];
 
 function App() {
+  const handleEmailContact = (e) => {
+    e.preventDefault();
+    
+    const nome = document.querySelector('input[name="nome"]')?.value || '';
+    const empresa = document.querySelector('input[name="empresa"]')?.value || '';
+    const email = document.querySelector('input[name="email"]')?.value || '';
+    const mensagem = document.querySelector('textarea[name="mensagem"]')?.value || '';
+
+    const emailBody = `
+Nome: ${nome}
+Empresa: ${empresa}
+E-mail: ${email}
+
+Mensagem:
+${mensagem}
+
+---
+Enviado através do site SecurityCenter
+    `.trim();
+
+    const mailtoLink = `mailto:contato@securitycenter.com?subject=Solicitação de Contato Comercial - ${empresa || 'SecurityCenter'}&body=${encodeURIComponent(emailBody)}`;
+    
+    window.location.href = mailtoLink;
+  };
+
   return (
     <div className="bg-slate-50 font-body text-slate-800 antialiased">
       <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur">
@@ -113,7 +144,7 @@ function App() {
               Sobre
             </a>
             <a href="#servicos" className="text-sm font-semibold text-slate-600 transition hover:text-brand-700">
-              Servicos
+              Serviços
             </a>
             <a href="#diferenciais" className="text-sm font-semibold text-slate-600 transition hover:text-brand-700">
               Diferenciais
@@ -144,11 +175,11 @@ function App() {
                 Suporte e solucoes completas de TI
               </p>
               <h1 className="mt-6 font-heading text-4xl font-extrabold leading-tight text-brand-900 sm:text-5xl lg:text-6xl">
-                TI confiavel para manter sua operacao produtiva e segura.
+                TI confiável para manter sua operação produtiva e segura.
               </h1>
               <p className="mt-6 max-w-2xl text-lg text-slate-700">
-                A SecurityCenter oferece suporte agil, confiavel e seguro para garantir que sua empresa mantenha a
-                produtividade e a seguranca em todos os niveis tecnologicos.
+                A SecurityCenter oferece suporte ágil, confiável e seguro para garantir que sua empresa mantenha a
+                produtividade e a segurança em todos os níveis tecnológicos.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <a
@@ -180,7 +211,7 @@ function App() {
                 </div>
                 <div className="rounded-xl bg-brand-50 p-4">
                   <dt className="text-xs font-bold uppercase tracking-[0.1em] text-brand-700">Compromisso</dt>
-                  <dd className="mt-1 font-heading text-lg font-bold text-brand-900">Seguranca e disponibilidade</dd>
+                  <dd className="mt-1 font-heading text-lg font-bold text-brand-900">Segurança e disponibilidade</dd>
                 </div>
               </dl>
             </aside>
@@ -191,14 +222,14 @@ function App() {
           <SectionTitle
             eyebrow="Sobre a empresa"
             title="Parceiro estrategico para a operacao de TI da sua empresa"
-            description="A SecurityCenter e especializada em solucoes completas de TI, oferecendo suporte agil e confiavel para garantir que sua empresa mantenha a produtividade e a seguranca em todos os niveis tecnologicos."
+            description="A SecurityCenter é especializada em soluções completas de TI, oferecendo suporte ágil e confiável para garantir que sua empresa mantenha a produtividade e a segurança em todos os níveis tecnológicos."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <Building2 className="text-brand-700" aria-hidden="true" />
               <h3 className="mt-4 font-heading text-xl font-bold text-brand-900">Foco em empresas</h3>
               <p className="mt-2 text-slate-700">
-                Atuacao dedicada a empresas que precisam de suporte tecnico, infraestrutura e gestao de TI.
+                Atuação dedicada a empresas que precisam de suporte técnico, infraestrutura e gestão de TI.
               </p>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -210,7 +241,7 @@ function App() {
             </div>
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <ShieldCheck className="text-brand-700" aria-hidden="true" />
-              <h3 className="mt-4 font-heading text-xl font-bold text-brand-900">Seguranca operacional</h3>
+              <h3 className="mt-4 font-heading text-xl font-bold text-brand-900">Segurança operacional</h3>
               <p className="mt-2 text-slate-700">
                 Processos voltados para continuidade, controle e resposta eficiente para manter ambientes estaveis.
               </p>
@@ -222,9 +253,9 @@ function App() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <SectionTitle
               centered
-              eyebrow="Servicos"
+              eyebrow="Serviços"
               title="Capacidade tecnica para cada etapa do suporte de TI"
-              description="Todos os servicos abaixo fazem parte da operacao da SecurityCenter, com foco em resposta eficiente e padrao de atendimento corporativo."
+              description="Capacidade técnica em todas as etapas do suporte de TI. Na SecurityCenter, cada serviço é parte essencial da operação, estruturado para oferecer resposta rápida, eficiência e um padrão de atendimento corporativo de alto nível. Nosso compromisso é garantir que sua empresa conte com suporte confiável e soluções que acompanhem a complexidade das demandas tecnológicas modernas."
             />
             <div className="mt-12 grid gap-6 md:grid-cols-2">
               {services.map((service) => (
@@ -238,8 +269,8 @@ function App() {
           <SectionTitle
             centered
             eyebrow="Diferenciais"
-            title="Entrega orientada por qualidade, proximidade e seguranca"
-            description="A SecurityCenter combina conhecimento tecnico com uma operacao estruturada para aumentar previsibilidade e eficiencia."
+            title="Entrega orientada por qualidade, proximidade e segurança"
+            description="A SecurityCenter alia conhecimento técnico a uma operação estruturada para oferecer previsibilidade, eficiência e confiança em cada etapa do suporte de TI."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {differentiators.map((item) => (
@@ -254,8 +285,8 @@ function App() {
               <SectionTitle
                 light
                 eyebrow="Por que escolher a SecurityCenter"
-                title="Apoio tecnico que protege a produtividade da sua operacao"
-                description="Com a SecurityCenter, sua empresa conta com um parceiro estrategico em TI que garante suporte completo, seguranca e eficiencia."
+                title="Apoio técnico que protege a produtividade da sua operação"
+                description="Com a SecurityCenter, sua empresa conta com um parceiro estratégico em TI que garante suporte completo, segurança e eficiência."
               />
               <p className="mt-6 text-lg text-slate-200">
                 Nos cuidamos da tecnologia para que voce cuide do seu negocio.
@@ -328,7 +359,7 @@ function App() {
             <form className="rounded-2xl border border-slate-200 bg-white p-6 shadow-card sm:p-8" aria-label="Formulario de contato">
               <h3 className="font-heading text-2xl font-bold text-brand-900">Solicite contato comercial</h3>
               <p className="mt-2 text-slate-600">
-                Este formulario e um placeholder para integracao com [PLACEHOLDER_CRM_OR_EMAIL_SERVICE].
+                Preencha o formulário abaixo e nossa equipe comercial entrará em contato para entender suas necessidades e apresentar as melhores soluções de TI para sua empresa.
               </p>
 
               <div className="mt-6 space-y-4">
@@ -372,6 +403,7 @@ function App() {
 
               <button
                 type="button"
+                onClick={handleEmailContact}
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-700 px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-900"
               >
                 Enviar solicitacao
