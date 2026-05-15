@@ -120,7 +120,7 @@ ${mensagem}
 Enviado através do site SecurityCenter
     `.trim();
 
-    const mailtoLink = `mailto:contato@securitycenter.com?subject=Solicitação de Contato Comercial - ${empresa || 'SecurityCenter'}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:ITSupport@securitycenter.inf.br?subject=Solicitação de Contato Comercial - ${empresa || 'SecurityCenter'}&body=${encodeURIComponent(emailBody)}`;
     
     window.location.href = mailtoLink;
   };
@@ -325,13 +325,13 @@ Enviado através do site SecurityCenter
                   </div>
                 </a>
                 <a
-                  href="mailto:securitycenter@securitycenter.com"
+                  href="mailto:ITSupport@securitycenter.inf.br"
                   className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-brand-300"
                 >
                   <Mail className="mt-1 text-brand-700" size={18} aria-hidden="true" />
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.1em] text-slate-500">E-mail</p>
-                    <p className="font-semibold text-slate-900">securitycenter@securitycenter.com</p>
+                    <p className="font-semibold text-slate-900">ITSupport@securitycenter.inf.br</p>
                   </div>
                 </a>
                 <a
