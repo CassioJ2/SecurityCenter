@@ -6,7 +6,6 @@ import {
   Headset,
   LifeBuoy,
   Mail,
-  MapPin,
   Network,
   Phone,
   ShieldCheck,
@@ -346,13 +345,6 @@ Enviado através do site SecurityCenter
                     <p className="font-semibold text-slate-900">(21) 99820-9990</p>
                   </div>
                 </a>
-                <div className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                  <MapPin className="mt-1 text-brand-700" size={18} aria-hidden="true" />
-                  <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.1em] text-slate-500">Endereco</p>
-                    <p className="font-semibold text-slate-900">Av. Rio Branco, 156 - Centro, Rio de Janeiro - RJ, 20040-901</p>
-                  </div>
-                </div>
               </div>
             </div>
 
